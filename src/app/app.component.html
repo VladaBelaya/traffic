@@ -1,0 +1,7 @@
+<app-traffic [formControl]="trafficControl"></app-traffic>
+
+<div>
+  <span *ngIf="trafficControl.value === 'green'" >Go!</span>
+  <span *ngIf="trafficControl.value === 'yellow'" >Ready?</span>
+  <span *ngIf="trafficControl.value === 'red'" >Stop!</span>
+</div>
