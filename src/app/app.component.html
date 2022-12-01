@@ -1,9 +1,9 @@
 <div class="container">
   <app-traffic [formControl]="trafficControl"></app-traffic>
 
-  <div class="text">
-    <span *ngIf="trafficControl.value === 'green'" >Go!</span>
-    <span *ngIf="trafficControl.value === 'yellow'" >Ready?</span>
-    <span *ngIf="trafficControl.value === 'red'" >Stop!</span>
+  <div [ngSwitch]="trafficControl.value" class="text">
+    <span *ngSwitchCase="'green'">Go!</span>
+    <span *ngSwitchCase="'yellow'">Ready?</span>
+    <span *ngSwitchCase="'red'">Stop!</span>
   </div>
 </div>

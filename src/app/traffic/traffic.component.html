@@ -8,8 +8,8 @@
   <div class="protector"></div>
   <div class="protector"></div>
   <div class="bulb"
-       *ngFor="let c of _colors"
-       (click)="switchColor(c, $event)"
-       [ngClass]="currentColor === c ? c : ''"
+       *ngFor="let color of colors"
+       (click)="switchColor(color, $event)"
+       [ngClass]="currentColor === color ? color : ''"
   ></div>
 </div>

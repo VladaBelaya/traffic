@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormControl} from "@angular/forms";
+import {TLColor} from "./traffic/traffic.component";
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,8 @@ import {FormControl} from "@angular/forms";
 })
 export class AppComponent implements OnInit {
   public trafficControl!: FormControl;
+
+  @Input() colors!: TLColor
 
   ngOnInit(): void {
     this.trafficControl = new FormControl();

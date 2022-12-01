@@ -2,7 +2,7 @@
 import { Component, OnInit, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-type TLColor = 'red' | 'yellow' | 'green';
+export type TLColor = 'red' | 'yellow' | 'green';
 
 @Component({
   selector: 'app-traffic',
@@ -16,7 +16,7 @@ type TLColor = 'red' | 'yellow' | 'green';
 })
 export class TrafficComponent implements ControlValueAccessor {
 
-  public _colors: TLColor[] = ['red', 'yellow', 'green'];
+  public colors: TLColor[] = ['red', 'yellow', 'green'];
   private _currentColor!: TLColor;
 
   propagateChange = (color: TLColor) => {};
@@ -25,8 +25,11 @@ export class TrafficComponent implements ControlValueAccessor {
   writeValue(color: TLColor): void {
     this.currentColor = color;
   }
+  constructor() {
+    console.log(this._currentColor)
+  }
 
-  get currentColor() {
+  get currentColor(): TLColor {
     return this._currentColor;
   }
 
@@ -45,16 +48,15 @@ export class TrafficComponent implements ControlValueAccessor {
   }
 
   toggleDown() {
-    this.currentColor = this._colors[(this._colors.indexOf(this.currentColor) + 1) % 3];
+    this.currentColor = this.colors[(this.colors.indexOf(this.currentColor) + 1) % 3];
   }
 
   toggleUp() {
-    this.currentColor = this._colors[(this._colors.indexOf(this.currentColor) + 2) % 3];
+    this.currentColor = this.colors[(this.colors.indexOf(this.currentColor) + 2) % 3];
   }
 
-  switchColor(color: any, $event: MouseEvent) {
-    console.log($event.target)
-    $event.stopPropagation();
+  switchColor(color: TLColor, $event: MouseEvent) {
+    $event.stopPropagation()
     this.currentColor = color;
   }
 
