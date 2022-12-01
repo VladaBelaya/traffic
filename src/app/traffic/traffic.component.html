@@ -9,7 +9,7 @@
   <div class="protector"></div>
   <div class="bulb"
        *ngFor="let c of _colors"
-       (click)="switchColor(c, $event); $event.stopPropagation();"
+       (click)="switchColor(c, $event)"
        [ngClass]="currentColor === c ? c : ''"
   ></div>
 </div>

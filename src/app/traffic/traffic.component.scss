@@ -5,6 +5,7 @@
   border-radius: 20px;
   position: relative;
   border: solid 5px #333;
+  pointer-events: none;
 }
 
 .traffic:before{
@@ -42,6 +43,9 @@
 }
 
 .bulb{
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
   background: black radial-gradient(grey, transparent);
   background-size: 5px 5px;
   width: 100px;

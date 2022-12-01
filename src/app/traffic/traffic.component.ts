@@ -54,6 +54,7 @@ export class TrafficComponent implements ControlValueAccessor {
 
   switchColor(color: any, $event: MouseEvent) {
     console.log($event.target)
+    $event.stopPropagation();
     this.currentColor = color;
   }
 

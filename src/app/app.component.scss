@@ -1,0 +1,15 @@
+.container {
+  max-width: 500px;
+  margin: 250px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+.text {
+  margin-top: 50px;
+  font-size: 26px;
+  font-weight: 700;
+}
